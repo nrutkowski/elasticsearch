@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  form(name="input" action="/response" method="post")
+    | Search Tweets:
+    input(type="text", name="query")
+    input(type="submit", value="Submit")
