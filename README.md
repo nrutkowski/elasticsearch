@@ -21,3 +21,6 @@ Run `npm install` to install all dependencies
 Once complete, run `node app`
 
 If no errors are present, navigate to `http://localhost:3000` to begin your search!
+
+### Screenshot of Results
+![screenshot](public/screenshots/screenshot_results.png?raw=true)
