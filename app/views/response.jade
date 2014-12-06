@@ -1,7 +1,14 @@
 extends layout
 
 block content
-  h3!= "You searched for: " + query
+  div(class="container")
+    div(class="row")
+      h3!= "You searched for: " + query
 
-  each res in results
-    li= res._source.text + " by " + res._source.user.name
+      div(class="col-xs-12")
+        each res in results
+          div(class="tweet col-xs-5")
+            img(src=res._source.user.profile_image_url)
+            div(class="info col-xs-9")
+              h4.strong= res._source.user.name
+              p= res._source.text

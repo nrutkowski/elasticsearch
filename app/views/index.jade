@@ -1,13 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class="container")
+    h1= title
 
-  form(name="input" action="/response" method="post")
-    | Search Tweets:
-    input(type="text", name="query")
-    input(type="submit", value="Submit")
+    div(class="row")
+      div(class="col-xs-9 col-sm-6")
+        form(name="input" action="/response" method="post" role="form")
+          div(class="form-group")
+            label(for="query") Search Tweets:
+            input(type="text", name="query", id="query", class="form-control")
 
-  div
-    #{json}
+          button(type="submit", value="Submit", class="btn btn-info") Search!
+

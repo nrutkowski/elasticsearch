@@ -31,7 +31,7 @@ module.exports = function (app) {
 router.get('/', function (req, res, next) {
   var articles = [new Article(), new Article()];
     res.render('index', {
-      title: 'Generator-Express MVC',
+      title: 'ElastySearch',
       articles: articles
     });
   var query = encodeURI(req.body.query);
@@ -59,23 +59,9 @@ router.post('/response', function (req, res) {
           var result = hits[i];
         }
       }
-      console.log(hits);
       res.render('response', { query: req.body.query, results: hits});
     });
-
-
-
 });
 
-
-
-
-// router.get('/flush', function (req, res) {
-//   client.indices.flush({
-//     full: 1
-//   }, function (err, response) {
-//     console.log(response);
-//   });
-// });
 
 
