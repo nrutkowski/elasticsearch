@@ -1,4 +1,7 @@
 extends layout
 
 block content
-  div!= query
+  h3!= "You searched for: " + query
+
+  each res in results
+    li= res._source.text + " by " + res._source.user.name
