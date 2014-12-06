@@ -38,7 +38,6 @@ new CronJob('15 * * * * *', function(){
         for(var i = 0; i<json.length; i++)
           {
             var item = json[i];
-            console.log(item);
             client.create({
               index: 'twitter',
               type: 'tweets',
